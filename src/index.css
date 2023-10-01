@@ -34,4 +34,11 @@ code {
 
 .login-btn {
   background-color: #1db954;
+  background-image: linear-gradient(45deg, #f3ec78, #1db954);
+}
+hr {
+  height: 8px;
+  background-image: linear-gradient(45deg, #f3ec78, #1db954);
+  border: 0;
+  height: 1px;
 }

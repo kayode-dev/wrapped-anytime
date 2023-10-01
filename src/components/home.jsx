@@ -18,7 +18,7 @@ const Home = () => {
           year
         </p>
       </div>
-      <button className="h-6 w-max p-6 text-center rounded login-btn flex justify-center items-center font-semibold gap-4">
+      <button className="h-6 w-max p-6 text-center rounded login-btn flex justify-center text-sm md:text-base items-center font-semibold gap-4">
         <img src={spotifylogo} alt="" />
         <a href={authURl}>Log into Spotify</a>
       </button>
