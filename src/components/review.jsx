@@ -18,7 +18,7 @@ const Review = () => {
 
   return (
     <div className="flex flex-col justify-around items-center text-white p-8 gap-10">
-      <p className="text-lg font-bold md:text-3xl">Your top Artist's</p>
+      <p className="text-lg font-bold md:text-3xl">Your top Artiste's</p>
       <ul className="flex flex-col md:flex-row gap-4 w-4/5">
         {topArtists.map((artist) => {
           return (
