@@ -1,7 +1,9 @@
 const SpotifyAuth = () => {
   var client_id = "a7213c8895654d37969a700b92e139f4";
   var redirect_uri =
-    process.env.redirect_uri || "http://localhost:3000/callback";
+    process.env.REACT_APP_ENVIRONMENT === "development"
+      ? "http://localhost:3000/callback"
+      : process.env.REACT_APP_LIVE_CALLBACK;
 
   var scope = "user-read-private user-read-email user-top-read";
 

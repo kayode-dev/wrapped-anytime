@@ -13,7 +13,7 @@ const Home = () => {
           </p>
           <p className="text-base md:text-2xl font-semibold">Wrapped Anytime</p>
         </div>
-        <p className="text-sm md:text-lg">
+        <p className="text-sm md:text-lg text-italic">
           Get your spotify most *everything* without waiting for the end of the
           year
         </p>
