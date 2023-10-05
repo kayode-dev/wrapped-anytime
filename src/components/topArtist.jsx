@@ -1,10 +1,9 @@
 const TopArtist = ({ image, name, standing }) => {
   return (
     <div className="flex flex-col gap-4 bg-neutral-800 p-5 rounded">
-      <div className="flex flex-row md:flex-col gap-4 items-center justify-between">
         <div className="flex items-center gap-4">
           <p className="font-bold">{standing}</p>
-          <div className="flex flex-row">
+          <div className="flex flex-col gap-4">
             <div className="h-32 w-32 ">
               <img
                 src={image}
@@ -12,11 +11,11 @@ const TopArtist = ({ image, name, standing }) => {
                 className="h-full w-full object-fill rounded"
               />
             </div>
+            <p className="font-bold">{name}</p>
           </div>
-          <p className="font-bold">{name}</p>
         </div>
       </div>
-    </div>
+
   );
 };
 

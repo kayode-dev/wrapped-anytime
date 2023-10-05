@@ -27,7 +27,9 @@ const Review = () => {
   return (
     <div>
       <div className="flex flex-col justify-around items-center text-white p-8 gap-10">
-        <p className="text-lg font-bold md:text-3xl">Your top Artiste's</p>
+        <p className="text-lg font-bold md:text-3xl gradient-text">
+          Your top Artiste's
+        </p>
         <div className="w-4/5 overflow-x-scroll">
           <div className="flex flex-row gap-4 w-full">
             {topArtists.map((artist) => {
@@ -43,7 +45,9 @@ const Review = () => {
         </div>
       </div>
       <div className="flex flex-col justify-around items-center text-white p-8 gap-10">
-        <p className="text-lg font-bold md:text-3xl">Your top Songs</p>
+        <p className="text-lg font-bold md:text-3xl gradient-text">
+          Your top Songs
+        </p>
         <div className="w-4/5">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 place-items-center">
             {topSongs.map((track) => {
