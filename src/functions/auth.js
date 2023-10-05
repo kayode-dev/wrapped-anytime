@@ -40,4 +40,16 @@ export const getTopArtist = async (token) => {
   return data;
 };
 
+export const getTopTracks = async (token) => {
+  const res = await fetch(
+    "https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=10",
+    {
+      headers: { Authorization: `Bearer ${token}` },
+    }
+  );
+  const data = await res.json();
+  console.log(data);
+  return data;
+};
+
 export default SpotifyAuth;
