@@ -5,7 +5,7 @@ const TopArtist = ({ image, name, standing }) => {
         <div className="flex items-center gap-4">
           <p className="font-bold">{standing}</p>
           <div className="flex flex-row">
-            <div className="h-16 w-16 md:h-32 md:w-32 ">
+            <div className="h-32 w-32 ">
               <img
                 src={image}
                 alt=""
