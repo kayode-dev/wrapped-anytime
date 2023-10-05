@@ -28,7 +28,7 @@ const Review = () => {
     <div>
       <div className="flex flex-col justify-around items-center text-white p-8 gap-10">
         <p className="text-lg font-bold md:text-3xl gradient-text">
-          Your top Artiste's
+          Your top Artistes
         </p>
         <div className="w-4/5 overflow-x-scroll">
           <div className="flex flex-row gap-4 w-full">
