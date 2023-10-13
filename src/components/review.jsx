@@ -30,7 +30,7 @@ const Review = () => {
         <p className="text-lg font-bold md:text-3xl gradient-text">
           Your top Artistes
         </p>
-        <div className="w-4/5 overflow-x-scroll">
+        <div className="w-4/5 overflow-x-auto overflow-y-hidden">
           <div className="flex flex-row gap-4 w-full">
             {topArtists.map((artist) => {
               return (

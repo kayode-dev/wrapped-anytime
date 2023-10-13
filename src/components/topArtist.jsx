@@ -1,6 +1,6 @@
 const TopArtist = ({ image, name, standing }) => {
   return (
-    <div className="flex flex-col gap-4 bg-neutral-800 p-5 rounded shadow-xl shadow-black">
+    <div className="flex flex-col gap-4 bg-neutral-800 p-5 rounded shadow-xl shadow-black hover:scale-105 duration-200">
       <div className="flex items-center gap-4">
         <p className="font-bold">{standing}</p>
         <div className="flex flex-col gap-4">
