@@ -11,7 +11,9 @@ const TopArtist = ({ image, name, standing }) => {
               className="h-full w-full object-fill rounded"
             />
           </div>
-          <p className="font-bold">{name}</p>
+          <p className="font-bold text-ellipsis whitespace-nowrap overflow-hidden w-32">
+            {name}
+          </p>
         </div>
       </div>
     </div>

@@ -18,10 +18,12 @@ const Home = () => {
           year
         </p>
       </div>
-      <button className="h-6 w-max p-6 text-center rounded login-btn flex justify-center text-sm md:text-base items-center font-semibold gap-4">
-        <img src={spotifylogo} alt="" />
-        <a href={authURl}>Log into Spotify</a>
-      </button>
+      <a href={authURl}>
+        <button className="h-6 w-max p-6 text-center rounded login-btn flex justify-center text-sm md:text-base items-center font-semibold gap-4">
+          <img src={spotifylogo} alt="" />
+          Log into Spotify
+        </button>
+      </a>
     </div>
   );
 };
