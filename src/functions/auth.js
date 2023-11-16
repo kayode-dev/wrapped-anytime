@@ -28,6 +28,15 @@ export const getReturnedParamsFromAuth = (hash) => {
   return paramsSplitUp;
 };
 
+export const getUser = async (token) => {
+  const res = await fetch("https://api.spotify.com/v1/me", {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+  const data = await res.json()
+  console.log(data)
+  return data;
+};
+
 export const getTopArtist = async (token) => {
   const res = await fetch(
     "https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=10",

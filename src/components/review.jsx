@@ -1,15 +1,19 @@
 import { useEffect, useState } from "react";
 import {
   getReturnedParamsFromAuth,
+  getUser,
   getTopArtist,
   getTopTracks,
 } from "../functions/auth";
 import TopArtist from "./topArtist";
 import TopTracks from "./topTracks";
 const Review = () => {
+  const [user, setUser] = useState({});
   const [topArtists, setTopArtist] = useState([]);
   const [topSongs, setTopSongs] = useState([]);
+  const [isLoading, setIsLoading] = useState();
   useEffect(() => {
+    setIsLoading(true);
     if (window.location.hash) {
       const { access_token } = getReturnedParamsFromAuth(window.location.hash);
       const setData = async () => {
@@ -17,8 +21,11 @@ const Review = () => {
         setTopArtist(artisteData.items);
         const songData = await getTopTracks(access_token);
         setTopSongs(songData.items);
+        const userData = await getUser(access_token);
+        setUser(userData);
       };
       setData();
+      setIsLoading(false);
     }
   }, []);
 
@@ -26,42 +33,65 @@ const Review = () => {
 
   return (
     <div>
-      <div className="flex flex-col justify-around items-center text-white p-8 gap-10">
-        <p className="text-lg font-bold md:text-3xl gradient-text">
-          Your top Artistes
-        </p>
-        <div className="w-4/5 overflow-x-auto overflow-y-hidden">
-          <div className="flex flex-row gap-4 w-full">
-            {topArtists.map((artist) => {
-              return (
-                <TopArtist
-                  name={artist.name}
-                  image={artist.images[1].url}
-                  standing={topArtists.lastIndexOf(artist) + 1}
-                />
-              );
-            })}
+      {isLoading ? (
+        <p>Loading</p>
+      ) : (
+        <div>
+          <div className="flex flex-col justify-around items-center text-white p-8 gap-10">
+            {/* <img src={user.images[1].url} className="rounded-full" alt="profile" /> */}
+            <p className="text-lg font-bold md:text-3xl">
+              Hello <span className="gradient-text">{user.display_name}</span>!,
+              over the last month, here are your top 10....
+            </p>
+            <p className="text-lg font-bold md:text-3xl gradient-text">
+              Artistes
+            </p>
+            <div className="w-4/5 overflow-x-auto overflow-y-hidden">
+              <div className="flex flex-row gap-4 w-full">
+                {topArtists.map((artist) => {
+                  return (
+                    <a
+                      href={artist.external_urls.spotify}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <TopArtist
+                        name={artist.name}
+                        image={artist.images[1].url}
+                        standing={topArtists.lastIndexOf(artist) + 1}
+                      />
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col justify-around items-center text-white p-8 gap-10">
+            <p className="text-lg font-bold md:text-3xl gradient-text">
+              and Songs
+            </p>
+            <div className="w-4/5">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 place-items-center">
+                {topSongs.map((track) => {
+                  return (
+                    <a
+                      href={track.external_urls.spotify}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <TopTracks
+                        trackName={track.name}
+                        image={track.album.images[1].url}
+                        standing={topSongs.lastIndexOf(track) + 1}
+                      />
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="flex flex-col justify-around items-center text-white p-8 gap-10">
-        <p className="text-lg font-bold md:text-3xl gradient-text">
-          Your top Songs
-        </p>
-        <div className="w-4/5">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 place-items-center">
-            {topSongs.map((track) => {
-              return (
-                <TopTracks
-                  trackName={track.name}
-                  image={track.album.images[1].url}
-                  standing={topSongs.lastIndexOf(track) + 1}
-                />
-              );
-            })}
-          </div>
-        </div>
-      </div>
+      )}
     </div>
   );
 };
