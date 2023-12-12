@@ -1,27 +1,34 @@
 import SpotifyAuth from "../functions/auth";
 import spotifylogo from "../assets/spotify.svg";
+import { useLayoutEffect } from "react";
+import gsap from "gsap";
+import { TextPlugin } from "gsap/TextPlugin";
 
 const Home = () => {
   const authURl = SpotifyAuth();
+  gsap.registerPlugin(TextPlugin);
+
+  useLayoutEffect(() => {
+    gsap.to(".run", { duration: 2, text: "RunDwn", delay: 3 });
+  }, []);
 
   return (
-    <div className="flex flex-col justify-around items-center text-white p-8 min-h-screen">
-      <div className="text-center flex flex-col gap-10">
+    <div className="flex flex-col justify-between items-center text-white p-8 md:px-28 md:py-8 min-h-screen">
+      <div className="text-left flex flex-col justify-center gap-10 w-full min-h-[75vh]">
         <div>
-          <p className="text-lg md:text-3xl font-bold gradient-text">
+          <p className="text-lg font-bold gradient-text"></p>
+          <p className="text-6xl md:text-8xl font-semibold gradient-text run">
             Numerous Cheffings Presents:
           </p>
-          <p className="text-base md:text-2xl font-semibold">Wrapped Anytime</p>
         </div>
         <p className="text-sm md:text-lg text-italic">
-          Get your spotify most *everything* without waiting for the end of the
-          year
+          A RunDwn of your top songs and artists in Spotify
         </p>
       </div>
       <a href={authURl}>
-        <button className="h-6 w-max p-6 text-center rounded login-btn flex justify-center text-sm md:text-base items-center font-semibold gap-4">
+        <button className="animate-bounce h-6 w-max p-6 text-center flex justify-center text-sm md:text-base items-center font-semibold gap-4">
           <img src={spotifylogo} alt="" />
-          Log into Spotify
+          This way to RunDwn
         </button>
       </a>
     </div>
