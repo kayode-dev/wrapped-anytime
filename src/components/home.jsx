@@ -13,11 +13,11 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="flex flex-col justify-between items-center text-white p-8 md:px-28 md:py-8 min-h-screen">
+    <div className="flex flex-col justify-between items-center text-white p-8 md:px-28 md:py-8 h-screen">
       <div className="text-left flex flex-col justify-center gap-10 w-full min-h-[75vh]">
         <div>
           <p className="text-lg font-bold gradient-text"></p>
-          <p className="text-6xl md:text-8xl font-semibold gradient-text run">
+          <p className="text-5xl md:text-8xl font-bold gradient-text run">
             Numerous Cheffings Presents:
           </p>
         </div>
