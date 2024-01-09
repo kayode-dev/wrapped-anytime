@@ -19,10 +19,10 @@ export const getReturnedParamsFromAuth = (hash) => {
   const stringAfterHash = hash.substring(1);
   const paramsUrl = stringAfterHash.split("&");
   const paramsSplitUp = paramsUrl.reduce((accumulator, currentValue) => {
-    console.log(currentValue);
+    // console.log(currentValue);
     const [key, value] = currentValue.split("=");
     accumulator[key] = value;
-    console.log(accumulator);
+    // console.log(accumulator);
     return accumulator;
   }, {});
   return paramsSplitUp;
@@ -32,32 +32,32 @@ export const getUser = async (token) => {
   const res = await fetch("https://api.spotify.com/v1/me", {
     headers: { Authorization: `Bearer ${token}` },
   });
-  const data = await res.json()
-  console.log(data)
+  const data = await res.json();
+  // console.log(data);
   return data;
 };
 
-export const getTopArtist = async (token) => {
+export const getTopArtist = async (token, time_range) => {
   const res = await fetch(
-    "https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=10",
+    `https://api.spotify.com/v1/me/top/artists?time_range=${time_range}&limit=10`,
     {
       headers: { Authorization: `Bearer ${token}` },
     }
   );
   const data = await res.json();
-  console.log(data);
+  // console.log(data);
   return data;
 };
 
-export const getTopTracks = async (token) => {
+export const getTopTracks = async (token, time_range) => {
   const res = await fetch(
-    "https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=10",
+    `https://api.spotify.com/v1/me/top/tracks?time_range=${time_range}&limit=10`,
     {
       headers: { Authorization: `Bearer ${token}` },
     }
   );
   const data = await res.json();
-  console.log(data);
+  // console.log(data);
   return data;
 };
 
