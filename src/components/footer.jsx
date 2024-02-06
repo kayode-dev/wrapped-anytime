@@ -1,7 +1,7 @@
 const Footer = () => {
   const thisyear = new Date().getFullYear();
   return (
-    <div className="mt-10 text-lg px-10">
+    <div className="mt-10 text-lg px-2 md:px-10">
       <hr className="border-inherit border-gray-500" />
       <div className="flex my-4 justify-between items-center text-lg text-white text-opacity-40">
         {" "}
