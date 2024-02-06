@@ -7,6 +7,7 @@ import {
 } from "../functions/auth";
 import TopArtist from "./topArtist";
 import TopTracks from "./topTracks";
+import Footer from "./footer";
 const Review = () => {
   const selcted_timeRange = useRef(); // ref for the drop down
 
@@ -98,7 +99,7 @@ const Review = () => {
               Artistes
             </p>
             <div className="w-[95%] md:w-4/5 overflow-x-auto overflow-y-hidden">
-              <div className="flex flex-row gap-4 w-full">
+              <div className="flex flex-row gap-4">
                 {topArtists.map((artist) => {
                   return (
                     <a
@@ -145,6 +146,7 @@ const Review = () => {
           </div>
         </div>
       )}
+      <Footer/>
     </div>
   );
 };
