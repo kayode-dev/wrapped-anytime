@@ -123,7 +123,7 @@ const Review = () => {
             <p className="text-lg font-bold md:text-3xl gradient-text">
               and Songs
             </p>
-            <div className="w-4/5">
+            <div className="w-full md:w-4/5">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 place-items-center">
                 {topSongs.map((track) => {
                   return (
@@ -132,11 +132,13 @@ const Review = () => {
                       href={track.external_urls.spotify}
                       target="_blank"
                       rel="noreferrer"
+                      className="w-full md:w-4/5"
                     >
                       <TopTracks
                         trackName={track.name}
                         image={track.album.images[1].url}
                         standing={topSongs.lastIndexOf(track) + 1}
+                        artistName={track.artists[0].name}
                       />
                     </a>
                   );
