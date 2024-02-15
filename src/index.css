@@ -8,10 +8,11 @@ body {
   font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #1A3437;
   background-image: url(./assets/background.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size:inherit;
   background-attachment: fixed;
   
 }

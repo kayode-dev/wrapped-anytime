@@ -71,11 +71,11 @@ const Review = () => {
   };
   //end
   return (
-    <div>
+    <div className="flex flex-col">
       {isLoading ? (
         <p>Loading</p>
       ) : (
-        <div>
+        <div className="flex flex-col">
           <div className="flex flex-col justify-around items-center text-white p-8 gap-10">
             <div className="flex gap-4 self-end items-center">
               <p>Time range:</p>
@@ -124,7 +124,7 @@ const Review = () => {
               and Songs
             </p>
             <div className="w-full md:w-4/5">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 place-items-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 place-items-center max-w-full">
                 {topSongs.map((track) => {
                   return (
                     <a
