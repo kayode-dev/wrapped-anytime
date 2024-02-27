@@ -8,6 +8,7 @@ import {
 import TopArtist from "./topArtist";
 import TopTracks from "./topTracks";
 import Footer from "./footer";
+import Navbar from "./navbar";
 const Review = () => {
   const selcted_timeRange = useRef(); // ref for the drop down
 
@@ -71,7 +72,8 @@ const Review = () => {
   };
   //end
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col pt-16">
+    <Navbar/>
       {isLoading ? (
         <p>Loading</p>
       ) : (

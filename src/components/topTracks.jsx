@@ -15,7 +15,7 @@ const TopTracks = ({ standing, image, trackName, artistName }) => {
               <img
                 src={spotifyLogo}
                 alt=""
-                className="absolute w-2 h-2 top-2 right-2"
+                className="absolute w-2 h-2 top-1 right-1"
               />
             </div>
             <div className="flex flex-col items-start gap-2 w-48">
