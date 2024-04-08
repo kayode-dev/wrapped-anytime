@@ -25,7 +25,7 @@ const Home = () => {
           A RunDwn of your top songs and artists in Spotify
         </p>
       </div>
-      <a href={authURl}>
+      <a href="/beforeyougo">
         <button className="animate-bounce h-6 w-max p-6 text-center flex justify-center text-sm md:text-base items-center font-semibold gap-4">
           <img src={spotifylogo} alt="" />
           This way to RunDwn
