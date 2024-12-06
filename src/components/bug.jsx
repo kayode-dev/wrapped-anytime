@@ -5,7 +5,7 @@ const BUG = () => {
 	return (
 		<main className="text-white flex flex-col gap-3 justify-center items-center p-4">
 			<p className="gradient-text font-semibold text-2xl">Before you go!</p>
-			<div className="w-full bg-pink-400">
+			<div className="w-full">
 				<iframe
 					title="Register for RunDwn"
 					src="https://docs.google.com/forms/d/e/1FAIpQLScbjyIVU6w36IZNpAuAZpDJpN5njHhknw5nTe8XCVplTmDbPw/viewform?embedded=true"
